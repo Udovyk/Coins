@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import udovyk.k.coins.R
 import udovyk.k.coins.data.Coins
-import udovyk.k.coins.data.GameState
 import udovyk.k.coins.data.CoinAppeared
 import kotlin.random.Random
 
@@ -19,8 +18,6 @@ class MainViewModel : ViewModel() {
     private var score = 0
     val liveScore = MutableLiveData<Int>()
 
-    private var state = GameState.START.text
-    val liveState = MutableLiveData<String>().apply { postValue(GameState.START.text) }
     val liveCoinAppeared = MutableLiveData<CoinAppeared>()
 
     private var timer: CountDownTimer? = null
@@ -31,7 +28,9 @@ class MainViewModel : ViewModel() {
     }
 
     fun beginGame() {
-        changeState()
+        score = 0
+        liveScore.postValue(0)
+
         if (timer != null) {
             timer!!.cancel()
             timer = null
@@ -51,23 +50,10 @@ class MainViewModel : ViewModel() {
     }
 
     fun stopGame() {
-        timer.let {
-            it!!.cancel()
+        if(timer != null ) {
+            timer!!.cancel()
         }
         timer = null
-        score = 0
-        liveScore.postValue(0)
-        changeState()
-    }
-
-    private fun changeState() {
-        if (state == GameState.START.text) {
-            state = GameState.STOP.text
-            liveState.postValue(GameState.STOP.text)
-        } else {
-            state = GameState.START.text
-            liveState.postValue(GameState.START.text)
-        }
     }
 
     private fun getRandCellVal() : Int = cellsList[Random.nextInt(0, cellsList.size)]

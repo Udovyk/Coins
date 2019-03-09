@@ -2,6 +2,7 @@ package udovyk.k.coins.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
@@ -43,6 +44,7 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, getString(R.string.game_over), Toast.LENGTH_LONG).show()
             mainViewModel.stopGame()
             clearImage()
+            showButton(true)
         }
     }
 
@@ -56,6 +58,11 @@ class MainActivity : AppCompatActivity() {
             }
         mainViewModel.liveCoinAppeared.observe(this, imageIdObserver)
         mainViewModel.liveScore.observe(this, scoreObserver)
+
+        binding.btnAction.setOnClickListener {
+            mainViewModel.beginGame()
+            showButton(false)
+        }
     }
 
     private fun clearImage() {
@@ -63,6 +70,17 @@ class MainActivity : AppCompatActivity() {
             setImageDrawable(null)
             isClickable = false
         }
+    }
+
+    private fun showButton(isShown: Boolean) {
+        binding.run {
+            if (isShown) {
+                btnAction.visibility = View.VISIBLE
+            } else {
+                btnAction.visibility = View.GONE
+            }
+        }
+
     }
 
 }

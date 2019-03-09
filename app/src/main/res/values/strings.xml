@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Coins</string>
     <string name="game_over">Игра окончена</string>
+    <string name="start">Start</string>
 </resources>
