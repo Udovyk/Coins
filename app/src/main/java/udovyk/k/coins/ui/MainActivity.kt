@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 import udovyk.k.coins.R
 import udovyk.k.coins.databinding.ActivityMainBinding
 import udovyk.k.coins.data.CoinAppeared
@@ -17,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mainViewModel: MainViewModel
     private lateinit var binding: ActivityMainBinding
 
-    var imageView: ImageView? = null
+    private var imageView: ImageView? = null
 
     private val imageIdObserver: Observer<CoinAppeared> = Observer {
         val data = it
@@ -27,13 +28,13 @@ class MainActivity : AppCompatActivity() {
             imageView = null
         } else {
             imageView = findViewById(it.id!!)
-            imageView!!.apply {
-                setImageDrawable(getDrawable(it.coin!!.image))
-                isClickable = true
-                setOnClickListener {
-                    data.coin.let {
-                        mainViewModel.updateScore(data.coin!!.value)
-                    }
+            val animatedVectorDrawableCompat = AnimatedVectorDrawableCompat.create(this@MainActivity,it.coin!!.image )
+            animatedVectorDrawableCompat!!.start()
+            imageView!!.setImageDrawable(animatedVectorDrawableCompat)
+            imageView!!.isClickable = true
+            imageView!!.setOnClickListener {
+                data.coin.let {
+                    mainViewModel.updateScore(data.coin!!.value)
                 }
             }
         }
@@ -82,5 +83,4 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
 }

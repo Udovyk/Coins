@@ -51,7 +51,7 @@
                     android:layout_height="80dp"
                     android:layout_weight="1"
                     android:clickable="false"
-                    tools:srcCompat="@drawable/ic_coin_silver"
+                    tools:srcCompat="@drawable/ic_avd_gold"
                     android:layout_margin="10dp"/>
 
             <ImageView
@@ -60,7 +60,7 @@
                     android:layout_height="80dp"
                     android:layout_weight="1"
                     android:clickable="false"
-                    tools:srcCompat="@drawable/ic_coin_gold"
+                    tools:srcCompat="@drawable/ic_avd_gold"
                     android:layout_margin="10dp"/>
             <ImageView
                     android:id="@+id/im4"
@@ -68,7 +68,7 @@
                     android:layout_height="80dp"
                     android:layout_weight="1"
                     android:clickable="false"
-                    tools:srcCompat="@drawable/ic_coin_gold"
+                    tools:srcCompat="@drawable/ic_avd_gold"
                     android:layout_margin="10dp"/>
 
         </TableRow>
@@ -87,7 +87,7 @@
                     android:layout_height="80dp"
                     android:layout_weight="1"
                     android:clickable="false"
-                    tools:srcCompat="@drawable/ic_coin_red"
+                    tools:srcCompat="@drawable/ic_avd_gold"
                     android:layout_margin="10dp"/>
             <ImageView
                     android:id="@+id/im6"
@@ -95,7 +95,7 @@
                     android:layout_height="80dp"
                     android:layout_weight="1"
                     android:clickable="false"
-                    tools:srcCompat="@drawable/ic_coin_silver"
+                    tools:srcCompat="@drawable/ic_avd_silver"
                     android:layout_margin="10dp"/>
             <ImageView
                     android:id="@+id/im7"
@@ -103,7 +103,7 @@
                     android:layout_height="80dp"
                     android:layout_weight="1"
                     android:clickable="false"
-                    tools:srcCompat="@drawable/ic_coin_gold"
+                    tools:srcCompat="@drawable/ic_avd_gold"
                     android:layout_margin="10dp"/>
 
         </TableRow>
@@ -122,7 +122,7 @@
                     android:layout_height="80dp"
                     android:layout_weight="1"
                     android:clickable="false"
-                    tools:srcCompat="@drawable/ic_coin_gold"
+                    tools:srcCompat="@drawable/ic_avd_red"
                     android:layout_margin="10dp"/>
             <ImageView
                     android:id="@+id/im9"
@@ -130,7 +130,7 @@
                     android:layout_height="80dp"
                     android:layout_weight="1"
                     android:clickable="false"
-                    tools:srcCompat="@drawable/ic_coin_gold"
+                    tools:srcCompat="@drawable/ic_avd_gold"
                     android:layout_margin="10dp"/>
             <ImageView
                     android:id="@+id/im3"
@@ -138,7 +138,7 @@
                     android:layout_height="80dp"
                     android:layout_weight="1"
                     android:clickable="false"
-                    tools:srcCompat="@drawable/ic_coin_gold"
+                    tools:srcCompat="@drawable/ic_avd_gold"
                     android:layout_margin="10dp"/>
         </TableRow>
     </TableLayout>
@@ -152,7 +152,7 @@
             android:layout_marginEnd="8dp" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"/>
     <TextView
-            android:text="Score:"
+            android:text="@string/score_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvScoreLabel"
