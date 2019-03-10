@@ -28,7 +28,7 @@
             android:id="@+id/tbLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="50dp"
             android:gravity="center_horizontal"
             android:divider="@drawable/divider"
             android:showDividers="beginning|middle|end"
@@ -146,10 +146,10 @@
             android:text="@string/start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnAction" android:layout_marginTop="8dp"
+            android:id="@+id/btnAction"
             app:layout_constraintTop_toBottomOf="@+id/tbLayout" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
             app:layout_constraintBottom_toBottomOf="parent"/>
     <TextView
             android:text="@string/score_label"
